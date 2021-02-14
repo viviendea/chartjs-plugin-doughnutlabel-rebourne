@@ -20,8 +20,7 @@ var argv = require('yargs')
   .option('output', {alias: 'o', default: 'dist'})
   .option('samples-dir', {default: 'samples'})
   .option('docs-dir', {default: 'docs'})
-  .option('www-dir', {default: 'www'})
-  .argv;
+  .option('www-dir', {default: 'www'}).argv;
 
 function watch(glob, task, done) {
   gutil.log('Waiting for changes...');

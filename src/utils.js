@@ -5,7 +5,6 @@ import Chart from 'chart.js';
 var helpers = Chart.helpers;
 
 var utils = {
-
   parseFont: function(value) {
     var defaults = Chart.defaults;
     var size = helpers.valueOrDefault(value.size, defaults.font.size);
@@ -23,14 +22,21 @@ var utils = {
   },
 
   toFontString: function(font) {
-    if (!font || helpers.isNullOrUndef(font.size) || helpers.isNullOrUndef(font.family)) {
+    if (
+      !font ||
+      helpers.isNullOrUndef(font.size) ||
+      helpers.isNullOrUndef(font.family)
+    ) {
       return null;
     }
 
-    return (font.style ? font.style + ' ' : '')
-			+ (font.weight ? font.weight + ' ' : '')
-			+ font.size + 'px '
-			+ font.family;
+    return (
+      (font.style ? font.style + ' ' : '') +
+      (font.weight ? font.weight + ' ' : '') +
+      font.size +
+      'px ' +
+      font.family
+    );
   },
 
   textSize: function(ctx, labels) {
@@ -51,11 +57,10 @@ var utils = {
 
     var result = {
       height: height,
-      width: width
+      width: width,
     };
     return result;
-  }
-
+  },
 };
 
 export default utils;

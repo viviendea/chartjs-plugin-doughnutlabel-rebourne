@@ -15,7 +15,8 @@ function drawDoughnutLabel(chart, options) {
 
     var innerLabels = [];
     options.labels.forEach(function(label) {
-      var text = typeof (label.text) === 'function' ? label.text(chart) : label.text;
+      var text =
+        typeof label.text === 'function' ? label.text(chart) : label.text;
       var innerLabel = {
         text: text,
         font: utils.parseFont(resolve([label.font, options.font, {}], ctx, 0)),
@@ -31,7 +32,9 @@ function drawDoughnutLabel(chart, options) {
     var textAreaSize = utils.textSize(ctx, innerLabels);
 
     // Calculate the adjustment ratio to fit the text area into the doughnut inner circle
-    var hypotenuse = Math.sqrt(Math.pow(textAreaSize.width, 2) + Math.pow(textAreaSize.height, 2));
+    var hypotenuse = Math.sqrt(
+      Math.pow(textAreaSize.width, 2) + Math.pow(textAreaSize.height, 2)
+    );
     var innerDiameter = chart.innerRadius * 2;
     var fitRatio = innerDiameter / hypotenuse;
 
@@ -40,7 +43,9 @@ function drawDoughnutLabel(chart, options) {
       innerLabels.forEach(function(innerLabel) {
         innerLabel.font.size = Math.floor(innerLabel.font.size * fitRatio);
         innerLabel.font.lineHeight = undefined;
-        innerLabel.font = utils.parseFont(resolve([innerLabel.font, {}], ctx, 0));
+        innerLabel.font = utils.parseFont(
+          resolve([innerLabel.font, {}], ctx, 0)
+        );
       });
 
       textAreaSize = utils.textSize(ctx, innerLabels);
@@ -50,8 +55,8 @@ function drawDoughnutLabel(chart, options) {
     ctx.textBaseline = 'middle';
 
     // The center of the inner circle
-    var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
-    var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+    var centerX = (chart.chartArea.left + chart.chartArea.right) / 2;
+    var centerY = (chart.chartArea.top + chart.chartArea.bottom) / 2;
 
     // The top Y coordinate of the text area
     var topY = centerY - textAreaSize.height / 2;
@@ -64,7 +69,8 @@ function drawDoughnutLabel(chart, options) {
       ctx.font = innerLabels[i].font.string;
 
       // The Y center of each line
-      var lineCenterY = topY + innerLabels[i].font.lineHeight / 2 + currentHeight;
+      var lineCenterY =
+        topY + innerLabels[i].font.lineHeight / 2 + currentHeight;
       currentHeight += innerLabels[i].font.lineHeight;
 
       // Draw each line of text
