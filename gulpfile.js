@@ -13,6 +13,7 @@ var path = require('path');
 var rollup = require('rollup-stream');
 var source = require('vinyl-source-stream');
 var pkg = require('./package.json');
+var gulpIf = require('gulp-if');
 
 var argv = require('yargs')
 	.option('output', {alias: 'o', default: 'dist'})
@@ -30,6 +31,10 @@ function watch(glob, task, done) {
 		});
 }
 
+function isFixed(file) {
+  return file.eslint != null && file.eslint.fixed;
+}
+
 gulp.task(
   'lint',
   gulp.series(function () {
@@ -37,8 +42,14 @@ gulp.task(
 
     return gulp
       .src(files)
-      .pipe(eslint())
+      .pipe(eslint({ fix: true }))
       .pipe(eslint.format())
+      .pipe(
+        gulpIf(
+          isFixed,
+          gulp.dest((file) => file.base)
+        )
+      )
       .pipe(eslint.failAfterError());
   })
 );
