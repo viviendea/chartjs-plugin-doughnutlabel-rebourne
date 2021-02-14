@@ -14,6 +14,7 @@ var rollup = require('rollup-stream');
 var source = require('vinyl-source-stream');
 var pkg = require('./package.json');
 var gulpIf = require('gulp-if');
+const browserSync = require('browser-sync');
 
 var argv = require('yargs')
   .option('output', {alias: 'o', default: 'dist'})
@@ -24,15 +25,18 @@ var argv = require('yargs')
 
 function watch(glob, task, done) {
   gutil.log('Waiting for changes...');
+  browserSync.init({
+    server: {
+      baseDir: ['./', './samples/'],
+    },
+  });
   return gulp
     .watch(glob, task)
     .on('end', done)
-    .on('change', function (file) {
-      gutil.log(
-        'Changes detected for',
-        path.relative('.', file)
-      );
-    });
+    .on('change', function(file) {
+      gutil.log('Changes detected for', path.relative('.', file));
+    })
+    .on('change', browserSync.reload);
 }
 
 function isFixed(file) {

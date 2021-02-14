@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.14",
     "chartjs": "^0.3.24",
     "eslint-config-chartjs": "^0.3.0",
     "gulp": "^4.0.2",
