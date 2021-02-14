@@ -1,9 +1,9 @@
 # Chart.js Doughnut plugin to allow for lines of text in the middle
 
-Chart.js plugin module that allows to display multiple lines of text centered in the middle area of the doughnut charts 
+Chart.js plugin module that allows to display multiple lines of text centered in the middle area of the doughnut charts. This plugin is forked from [https://github.com/ciprianciurea/chartjs-plugin-doughnutlabel](https://github.com/ciprianciurea/chartjs-plugin-doughnutlabel) to provide support for Chart.js v3 as well as some other improvements and bug fixes. This is a BREAKING change meaning this plugin will NOT work with Chart.js v3.
 
 ## Demo
-Have a look at the [Demo page](https://ciprianciurea.github.io/chartjs-plugin-doughnutlabel/samples/index.html).
+Have a look at the [Demo page](https://alexkuc.github.io/chartjs-plugin-doughnutlabel-rebourne/samples/index.html).
 
 ## Table of contents
 
@@ -15,13 +15,20 @@ Have a look at the [Demo page](https://ciprianciurea.github.io/chartjs-plugin-do
 ## Installation
 
 Install through npm:
-```
-npm install --save chartjs-plugin-doughnutlabel
+
+```bash
+npm install --save chartjs-plugin-doughnutlabel-rebourne
 ```
 
-## Usage 
+Don't forget to install v3 of Chart.js:
 
+```bash
+npm install --save chart.js@next
 ```
+
+## Usage
+
+```js
 var myDoughnutChart = new Chart(ctx, {
   type: 'doughnut',
   data: data,
@@ -58,24 +65,25 @@ var myDoughnutChart = new Chart(ctx, {
           }
         ]
       }
-    }		
+    }
   }
 });
-
-var getTotal = function(myDoughnutChart) {
-	var sum = myDoughnutChart.config.data.datasets[0].data.reduce((a, b) => a + b, 0);
-	return `Total: ${sum}`;
-}
 ```
 
-### Usage without a module bundler
-The plugin can be manually downloaded from the 
-[Releases page on GitHub!](https://github.com/ciprianciurea/chartjs-plugin-doughnutlabel/releases)
-```
+## Usage without a module bundler
+
+Using CDN is probably the best way - [jsDelivr](https://www.jsdelivr.com/package/npm/chartjs-plugin-doughnutlabel-rebourne). Select the `.min` file with SRI parameters for extra safety. If you need to debug any issues, select the full version instead.
+
+Alternatively, the plugin can be manually downloaded from the
+[Releases page on GitHub!](https://github.com/alexkuc/chartjs-plugin-doughnutlabel-rebourne/releases)
+
+```html
 <script src="chartjs-plugin-doughnutlabel.js"></script>
 ```
+
 or use the minified version
-```
+
+```html
 <script src="chartjs-plugin-doughnutlabel.min.js"></script>
 ```
 
@@ -83,19 +91,18 @@ or use the minified version
 
 You first need to install node dependencies (requires [Node.js](https://nodejs.org/)):
 
-    > npm install
+```bash
+npm install
+```
 
-The following commands will then be available from the repository root:
+The following commands are available via `package.json`:
 
-    > gulp lint             // perform code linting
-    > gulp build            // build dist files
-    > gulp build --watch    // build and watch for changes
-    > gulp package          // create an archive with dist files and samples
-
-## In Angular
-
-For an example on how to use this plugin with angular, please check this stackblitz prototype:
-[doughnutlabel plugin in angular](https://stackblitz.com/edit/angular-v9tfg7)
+| Command | Purpose |
+| :--- | :--- |
+| `npm run lint` | perform code linting |
+| `npm run build ` | build dist files |
+| `npm run build --watch` | build and watch for changes (inc. browser-sync) |
+| `npm run package` | create an archive with dist files and samples |
 
 ## License
 
