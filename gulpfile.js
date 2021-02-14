@@ -24,10 +24,14 @@ var argv = require('yargs')
 
 function watch(glob, task, done) {
   gutil.log('Waiting for changes...');
-  return gulp.watch(glob, task)
+  return gulp
+    .watch(glob, task)
     .on('end', done)
-    .on('change', function(e) {
-      gutil.log('Changes detected for', path.relative('.', e.path), '(' + e.type + ')');
+    .on('change', function (file) {
+      gutil.log(
+        'Changes detected for',
+        path.relative('.', file)
+      );
     });
 }
 

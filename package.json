@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "gulp build",
+    "watch": "gulp build --watch",
     "package": "gulp package",
     "lint": "gulp lint",
     "samples": "gulp samples"
