@@ -19,7 +19,8 @@
     "lint": "gulp lint",
     "package": "gulp package",
     "samples": "gulp samples",
-    "watch": "gulp build --watch"
+    "watch": "gulp build --watch",
+    "test": "yarn lint"
   },
   "devDependencies": {
     "browser-sync": "^2.26.14",
