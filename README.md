@@ -14,16 +14,16 @@ Have a look at the [Demo page](https://alexkuc.github.io/chartjs-plugin-doughnut
 
 ## Installation
 
-Install through npm:
+Install through yarn:
 
 ```bash
-npm install --save chartjs-plugin-doughnutlabel-rebourne
+yarn install chartjs-plugin-doughnutlabel-rebourne
 ```
 
 Don't forget to install v3 of Chart.js:
 
 ```bash
-npm install --save chart.js@next
+yarn install chart.js@next
 ```
 
 ## Usage
@@ -92,17 +92,17 @@ or use the minified version
 You first need to install node dependencies (requires [Node.js](https://nodejs.org/)):
 
 ```bash
-npm install
+yarn install
 ```
 
 The following commands are available via `package.json`:
 
 | Command | Purpose |
 | :--- | :--- |
-| `npm run lint` | perform code linting |
-| `npm run build ` | build dist files |
-| `npm run build --watch` | build and watch for changes (inc. browser-sync) |
-| `npm run package` | create an archive with dist files and samples |
+| `yarn lint` | perform code linting |
+| `yarn build ` | build dist files |
+| `yarn build --watch` | build and watch for changes (inc. browser-sync) |
+| `yarn package` | create an archive with dist files and samples |
 
 ## License
 

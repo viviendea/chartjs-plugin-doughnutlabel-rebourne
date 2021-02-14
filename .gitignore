@@ -67,3 +67,11 @@ typings/
 .vscode/extensions.json
 
 dist/*
+
+# yarn 2 pnp w/ non-zero install
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
