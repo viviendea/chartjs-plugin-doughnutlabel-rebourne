@@ -5,7 +5,7 @@
 'use strict';
 
 export default {
-	/**
+  /**
 	 * The font options used to draw the label text.
 	 * @member {Object|Array|Function}
 	 * @prop {String} font.family - defaults to Chart.defaults.global.defaultFontFamily
@@ -15,11 +15,11 @@ export default {
 	 * @prop {Number} font.weight - defaults to 'normal'
 	 * @default Chart.defaults.global.defaultFont.*
 	 */
-	font: {
-		family: undefined,
-		lineHeight: 1.2,
-		size: undefined,
-		style: undefined,
-		weight: null
-	}
+  font: {
+    family: undefined,
+    lineHeight: 1.2,
+    size: undefined,
+    style: undefined,
+    weight: null
+  }
 };
