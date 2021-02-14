@@ -75,7 +75,9 @@ gulp.task(
         .pipe(gulp.dest(out));
     };
 
-    return argv.watch ? [task(), watch('src/**/*.js', task, done)] : task();
+    return argv.watch
+      ? [task(), watch(['src/**/*.js', 'samples/**/*.js'], task, done)]
+      : task();
   })
 );
 
