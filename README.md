@@ -26,6 +26,20 @@ Don't forget to install v3 of Chart.js:
 yarn install chart.js@next
 ```
 
+After that, you need to activate the plugin, either globally :
+
+```js
+Chart.plugins.register(DoughnutLabel);
+```
+
+or for each chart separately:
+
+```js
+new Chart(ctx, {
+  plugins: [DoughnutLabel]
+})
+```
+
 ## Usage
 
 ```js

@@ -9,3 +9,4 @@ env:
 
 globals:
   Chart: readonly
+  DoughnutLabel: readonly

@@ -17,6 +17,7 @@ var ctx = document.getElementById('chart1').getContext('2d');
 /* eslint-disable-next-line no-unused-vars */
 var myChart1 = new Chart(ctx, {
   type: 'doughnut',
+  plugins: [DoughnutLabel],
   data: {
     datasets: [
       {
@@ -83,6 +84,7 @@ ctx = document.getElementById('chart2').getContext('2d');
 /* eslint-disable-next-line no-unused-vars */
 var myChart2 = new Chart(ctx, {
   type: 'doughnut',
+  plugins: [DoughnutLabel],
   data: {
     datasets: [
       {
@@ -131,6 +133,7 @@ var myChart2 = new Chart(ctx, {
 ctx = document.getElementById('chart3').getContext('2d');
 var myChart3 = new Chart(ctx, {
   type: 'doughnut',
+  plugins: [DoughnutLabel],
   data: {
     datasets: [
       {
