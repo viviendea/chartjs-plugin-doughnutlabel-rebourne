@@ -8,7 +8,10 @@
     "url": "https://github.com/ciprianciurea/chartjs-plugin-doughnutlabel.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build",
+    "package": "gulp package",
+    "lint": "gulp lint",
+    "samples": "gulp samples"
   },
   "author": "",
   "license": "ISC",
