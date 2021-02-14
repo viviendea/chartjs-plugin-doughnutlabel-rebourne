@@ -7,15 +7,15 @@ var helpers = Chart.helpers;
 var utils = {
 
   parseFont: function(value) {
-    var global = Chart.defaults.global;
-    var size = helpers.valueOrDefault(value.size, global.defaultFontSize);
+    var global = Chart.defaults;
+    var size = helpers.valueOrDefault(value.size, global.font.size);
     var font = {
       family: helpers.valueOrDefault(value.family, global.defaultFontFamily),
-      lineHeight: helpers.options.toLineHeight(value.lineHeight, size),
+      lineHeight: helpers.toLineHeight(value.lineHeight, size),
       size: size,
       style: helpers.valueOrDefault(value.style, global.defaultFontStyle),
       weight: helpers.valueOrDefault(value.weight, null),
-      string: ''
+      string: '',
     };
 
     font.string = utils.toFontString(font);

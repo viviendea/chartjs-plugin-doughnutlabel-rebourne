@@ -6,12 +6,12 @@ import utils from './utils';
 
 var helpers = Chart.helpers;
 
-Chart.defaults.global.plugins.doughnutlabel = defaults;
+Chart.defaults.plugins.doughnutlabel = defaults;
 
 function drawDoughnutLabel(chart, options) {
   if (options && options.labels && options.labels.length > 0) {
     var ctx = chart.ctx;
-    var resolve = helpers.options.resolve;
+    var resolve = helpers.resolve;
 
     var innerLabels = [];
     options.labels.forEach(function(label) {
@@ -19,7 +19,11 @@ function drawDoughnutLabel(chart, options) {
       var innerLabel = {
         text: text,
         font: utils.parseFont(resolve([label.font, options.font, {}], ctx, 0)),
-        color: resolve([label.color, options.color, Chart.defaults.global.defaultFontColor], ctx, 0)
+        color: resolve(
+          [label.color, options.color, Chart.defaults.color],
+          ctx,
+          0
+        ),
       };
       innerLabels.push(innerLabel);
     });
@@ -69,9 +73,9 @@ function drawDoughnutLabel(chart, options) {
   }
 }
 
-Chart.plugins.register({
+Chart.register({
   id: 'doughnutlabel',
   beforeDatasetDraw: function(chart, args, options) {
     drawDoughnutLabel(chart, options);
-  }
+  },
 });
