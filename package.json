@@ -1,21 +1,26 @@
 {
-  "name": "chartjs-plugin-doughnutlabel",
-  "version": "2.0.3",
+  "name": "chartjs-plugin-doughnutlabel-rebourne",
+  "version": "3.0.0-beta",
   "description": "Chart.js plugin for doughnut chart to display lines of text in the center",
-  "main": "dist/chartjs-plugin-doughnutlabel.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ciprianciurea/chartjs-plugin-doughnutlabel.git"
+    "url": "https://github.com/alexkuc/chartjs-plugin-doughnutlabel-rebourne.git"
   },
+  "license": "MIT",
+  "author": "ciprianciurea",
+  "main": "dist/chartjs-plugin-doughnutlabel-rebourne.js",
+  "jsdelivr": "dist/chartjs-plugin-doughnutlabel-rebourne.min.js",
+  "unpkg": "dist/chartjs-plugin-doughnutlabel-rebourne.min.js",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "build": "gulp build",
-    "watch": "gulp build --watch",
-    "package": "gulp package",
     "lint": "gulp lint",
-    "samples": "gulp samples"
+    "package": "gulp package",
+    "samples": "gulp samples",
+    "watch": "gulp build --watch"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.14",
     "chartjs": "^0.3.24",
@@ -36,6 +41,6 @@
     "yargs": "^16.2.0"
   },
   "peerDependencies": {
-    "chart.js": ">= 2.7.0 < 3"
+    "chart.js": "^3.0.0-beta"
   }
 }
