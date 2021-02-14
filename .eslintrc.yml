@@ -6,3 +6,6 @@ parserOptions:
 env:
   browser: true
   node: true
+
+globals:
+  Chart: readonly
