@@ -29,20 +29,20 @@ var myChart1 = new Chart(ctx, {
   },
   options: {
     responsive: true,
-    legend: {
-      display: false,
-      position: 'top',
-    },
-    title: {
-      display: true,
-      fontSize: 20,
-      text: 'Multiple lines of text',
-    },
     animation: {
       animateScale: true,
       animateRotate: true,
     },
     plugins: {
+      legend: {
+        display: false,
+        position: 'top',
+      },
+      title: {
+        display: true,
+        fontSize: 20,
+        text: 'Multiple lines of text',
+      },
       doughnutlabel: {
         labels: [
           {
@@ -95,20 +95,20 @@ var myChart2 = new Chart(ctx, {
   },
   options: {
     responsive: true,
-    legend: {
-      display: false,
-      position: 'top',
-    },
-    title: {
-      display: true,
-      fontSize: 20,
-      text: 'One line of text',
-    },
     animation: {
       animateScale: true,
       animateRotate: true,
     },
     plugins: {
+      legend: {
+        display: false,
+        position: 'top',
+      },
+      title: {
+        display: true,
+        fontSize: 20,
+        text: 'One line of text',
+      },
       doughnutlabel: {
         labels: [
           {
@@ -148,20 +148,20 @@ var myChart3 = new Chart(ctx, {
   },
   options: {
     responsive: true,
-    legend: {
-      display: false,
-      position: 'top',
-    },
-    title: {
-      display: true,
-      fontSize: 20,
-      text: 'Calculated value',
-    },
     animation: {
       animateScale: true,
       animateRotate: true,
     },
     plugins: {
+      legend: {
+        display: false,
+        position: 'top',
+      },
+      title: {
+        display: true,
+        fontSize: 20,
+        text: 'Calculated value',
+      },
       doughnutlabel: {
         labels: [
           {
