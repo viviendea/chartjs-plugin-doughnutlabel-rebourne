@@ -18,12 +18,14 @@ var ctx = document.getElementById('chart1').getContext('2d');
 var myChart1 = new Chart(ctx, {
   type: 'doughnut',
   data: {
-    datasets: [{
-      data: [4000, 3000, 2000, 1000],
-      backgroundColor: DEFAULT_COLORS1,
-      label: 'Dataset 1'
-    }],
-    labels: ['Item one', 'Item two', 'Item three', 'Item four']
+    datasets: [
+      {
+        data: [4000, 3000, 2000, 1000],
+        backgroundColor: DEFAULT_COLORS1,
+        label: 'Dataset 1',
+      },
+    ],
+    labels: ['Item one', 'Item two', 'Item three', 'Item four'],
   },
   options: {
     responsive: true,
@@ -34,11 +36,11 @@ var myChart1 = new Chart(ctx, {
     title: {
       display: true,
       fontSize: 20,
-      text: 'Multiple lines of text'
+      text: 'Multiple lines of text',
     },
     animation: {
       animateScale: true,
-      animateRotate: true
+      animateRotate: true,
     },
     plugins: {
       doughnutlabel: {
@@ -46,34 +48,34 @@ var myChart1 = new Chart(ctx, {
           {
             text: 'The title',
             font: {
-              size: '60'
-            }
+              size: '60',
+            },
           },
           {
             text: 'The subtitle',
             font: {
-              size: '50'
+              size: '50',
             },
-            color: 'grey'
+            color: 'grey',
           },
           {
             text: '$100.000',
             font: {
-              size: '30'
+              size: '30',
             },
-            color: 'red'
+            color: 'red',
           },
           {
             text: '95%',
             font: {
-              size: '45'
+              size: '45',
             },
-            color: 'green'
-          }
-        ]
-      }
-    }
-  }
+            color: 'green',
+          },
+        ],
+      },
+    },
+  },
 });
 
 // Doughnut with one line of text in the center
@@ -82,12 +84,14 @@ ctx = document.getElementById('chart2').getContext('2d');
 var myChart2 = new Chart(ctx, {
   type: 'doughnut',
   data: {
-    datasets: [{
-      data: [4000, 3000, 2000, 1000],
-      backgroundColor: DEFAULT_COLORS2,
-      label: 'Dataset 1'
-    }],
-    labels: ['Item one', 'Item two', 'Item three', 'Item four']
+    datasets: [
+      {
+        data: [4000, 3000, 2000, 1000],
+        backgroundColor: DEFAULT_COLORS2,
+        label: 'Dataset 1',
+      },
+    ],
+    labels: ['Item one', 'Item two', 'Item three', 'Item four'],
   },
   options: {
     responsive: true,
@@ -98,11 +102,11 @@ var myChart2 = new Chart(ctx, {
     title: {
       display: true,
       fontSize: 20,
-      text: 'One line of text'
+      text: 'One line of text',
     },
     animation: {
       animateScale: true,
-      animateRotate: true
+      animateRotate: true,
     },
     plugins: {
       doughnutlabel: {
@@ -113,14 +117,14 @@ var myChart2 = new Chart(ctx, {
               size: '60',
               family: 'Arial, Helvetica, sans-serif',
               style: 'italic',
-              weight: 'bold'
+              weight: 'bold',
             },
-            color: '#bc2c1a'
-          }
-        ]
-      }
-    }
-  }
+            color: '#bc2c1a',
+          },
+        ],
+      },
+    },
+  },
 });
 
 // Doughnut with one line of text in the center
@@ -128,12 +132,19 @@ ctx = document.getElementById('chart3').getContext('2d');
 var myChart3 = new Chart(ctx, {
   type: 'doughnut',
   data: {
-    datasets: [{
-      data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()],
-      backgroundColor: DEFAULT_COLORS2,
-      label: 'Dataset 1'
-    }],
-    labels: ['Item one', 'Item two', 'Item three', 'Item four']
+    datasets: [
+      {
+        data: [
+          randomScalingFactor(),
+          randomScalingFactor(),
+          randomScalingFactor(),
+          randomScalingFactor(),
+        ],
+        backgroundColor: DEFAULT_COLORS2,
+        label: 'Dataset 1',
+      },
+    ],
+    labels: ['Item one', 'Item two', 'Item three', 'Item four'],
   },
   options: {
     responsive: true,
@@ -144,11 +155,11 @@ var myChart3 = new Chart(ctx, {
     title: {
       display: true,
       fontSize: 20,
-      text: 'Calculated value'
+      text: 'Calculated value',
     },
     animation: {
       animateScale: true,
-      animateRotate: true
+      animateRotate: true,
     },
     plugins: {
       doughnutlabel: {
@@ -159,14 +170,14 @@ var myChart3 = new Chart(ctx, {
               size: '60',
               family: 'Arial, Helvetica, sans-serif',
               style: 'italic',
-              weight: 'bold'
+              weight: 'bold',
             },
-            color: '#bc2c1a'
-          }
-        ]
-      }
-    }
-  }
+            color: '#bc2c1a',
+          },
+        ],
+      },
+    },
+  },
 });
 
 document.getElementById('randomizeData').addEventListener('click', function() {
