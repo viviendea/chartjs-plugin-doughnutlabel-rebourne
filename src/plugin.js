@@ -21,6 +21,7 @@ export default {
           typeof label.text === 'function' ? label.text(chart) : label.text;
         var innerLabel = {
           text: text,
+          // this custom function will eventually call Charts.default
           font: utils.parseFont(
             resolve([label.font, options.font, {}], ctx, 0)
           ),

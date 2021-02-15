@@ -42,6 +42,23 @@ new Chart(ctx, {
 
 ## Usage
 
+Below is a table with available options:
+
+| Option | Description | Label Scope (plugin.labels) | Plugin Scope (options.plugin) | Global Scope (Chart.defaults) |
+| --- | --- | :---: | :---: | :---: |
+| `paddingPercentage` | add padding when scaling text larger than inner circle | | &check; | &check; |
+| `labels` | array of labels (objects) | | &check; | |
+| `color`| css property | &check; | &check; | &check; |
+| `font.family` | css property | &check; | &check; | &check; |
+| `font.lineHeight` | css property | &check; | &check; | &check; |
+| `font.size` | css property | &check; | &check; | &check; |
+| `font.style` | css property | &check; | &check; | &check; |
+| `font.weight` | css property | &check; | &check; | &check; |
+| `font.string` | all previous font properties in one string separated by space | &check; | &check; | &check; |
+| `text` | value of label (can be string or function) | &check; | | |
+
+Note that more specific scope will override more global. For example, if you declare `color` in plugin scope and in label scope, value from label scope will win.
+
 ```js
 options: {
   plugins: {
