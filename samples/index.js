@@ -166,6 +166,7 @@ var myChart3 = new Chart(ctx, {
         text: 'Calculated value',
       },
       doughnutlabel: {
+        paddingPercentage: 25,
         labels: [
           {
             text: getTotal,

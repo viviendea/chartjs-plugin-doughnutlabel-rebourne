@@ -43,45 +43,25 @@ new Chart(ctx, {
 ## Usage
 
 ```js
-var myDoughnutChart = new Chart(ctx, {
-  type: 'doughnut',
-  data: data,
-  options: {
-    plugins: {
-      doughnutlabel: {
-        labels: [
-          {
-            text: 'The title',
-            font: {
-              size: '60'
-            }
+options: {
+  plugins: {
+    doughnutlabel: {
+      paddingPercentage: 5,
+      labels: [
+        {
+          text: 'Text' or functionName,
+          font: {
+            size: '24',
+            family: 'Arial, Helvetica, sans-serif',
+            style: 'italic',
+            weight: 'bold',
           },
-          {
-            text: getTotal,
-            font: {
-              size: '50'
-            },
-            color: 'grey'
-          },
-          {
-            text: '$100.000',
-            font: {
-              size: '30'
-            },
-            color: 'red'
-          },
-          {
-            text: '95%',
-            font: {
-              size: '45'
-            },
-          color: 'green'
-          }
-        ]
-      }
-    }
-  }
-});
+          color: '#bc2c1a',
+        },
+      ],
+    },
+  },
+},
 ```
 
 ## Usage without a module bundler

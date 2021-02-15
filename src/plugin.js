@@ -35,12 +35,24 @@ export default {
 
       var textAreaSize = utils.textSize(ctx, innerLabels);
 
+      var paddingPercentage = resolve(
+        [
+          options.paddingPercentage,
+          Chart.defaults.plugins[this.id].paddingPercentage,
+        ],
+        ctx,
+        0
+      );
+
+      // add "padding" between inner circle and text area
+      var padding = 1 - paddingPercentage / 100;
+
       // Calculate the adjustment ratio to fit the text area into the doughnut inner circle
       var hypotenuse = Math.sqrt(
         Math.pow(textAreaSize.width, 2) + Math.pow(textAreaSize.height, 2)
       );
       var innerDiameter = args.meta.controller.innerRadius * 2;
-      var fitRatio = innerDiameter / hypotenuse;
+      var fitRatio = (innerDiameter / hypotenuse) * padding;
 
       // Adjust the font if necessary and recalculate the text area after applying the fit ratio
       if (fitRatio < 1) {

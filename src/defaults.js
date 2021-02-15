@@ -14,6 +14,7 @@ export default {
    * @prop {String} font.style - defaults to Chart.defaults.global.defaultFontStyle
    * @prop {Number} font.weight - defaults to 'normal'
    * @default Chart.defaults.font.*
+   * @prop {Number} paddingPercentage - how much padding to add when scaling very large text (value in percentage of 100)
    */
   font: {
     family: undefined,
@@ -22,4 +23,5 @@ export default {
     style: undefined,
     weight: null,
   },
+  paddingPercentage: 10,
 };
