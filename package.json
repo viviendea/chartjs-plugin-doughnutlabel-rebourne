@@ -1,6 +1,6 @@
 {
   "name": "chartjs-plugin-doughnutlabel-rebourne",
-  "version": "3.0.0-beta",
+  "version": "3.0.0-beta.1",
   "description": "Chart.js plugin for doughnut chart to display lines of text in the center",
   "repository": {
     "type": "git",
@@ -19,8 +19,8 @@
     "lint": "gulp lint",
     "package": "gulp package",
     "samples": "gulp samples",
-    "watch": "gulp build --watch",
-    "test": "yarn lint"
+    "test": "yarn lint",
+    "watch": "gulp build --watch"
   },
   "devDependencies": {
     "browser-sync": "^2.26.14",
