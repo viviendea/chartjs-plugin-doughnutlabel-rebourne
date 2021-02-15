@@ -89,13 +89,13 @@ Alternatively, the plugin can be manually downloaded from the
 [Releases page on GitHub!](https://github.com/alexkuc/chartjs-plugin-doughnutlabel-rebourne/releases)
 
 ```html
-<script src="chartjs-plugin-doughnutlabel.js"></script>
+<script src="chartjs-plugin-doughnutlabel-rebourne.js"></script>
 ```
 
 or use the minified version
 
 ```html
-<script src="chartjs-plugin-doughnutlabel.min.js"></script>
+<script src="chartjs-plugin-doughnutlabel-rebourne.min.js"></script>
 ```
 
 ## Development
