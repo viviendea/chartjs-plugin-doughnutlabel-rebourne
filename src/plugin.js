@@ -10,7 +10,17 @@ Chart.defaults.plugins.doughnutlabel = defaults;
 
 export default {
   id: 'doughnutlabel',
-  beforeDatasetDraw: function(chart, args, options) {
+  beforeInit: function(chart, args, options) {
+    var resolve = helpers.resolve;
+    var ctx = chart.ctx;
+    var api = resolve(
+      [options.api, Chart.defaults.plugins[this.id].api],
+      ctx,
+      0
+    );
+    this[api] = this._drawLabels;
+  },
+  _drawLabels: function(chart, args, options) {
     if (options && options.labels && options.labels.length > 0) {
       var ctx = chart.ctx;
       var resolve = helpers.resolve;

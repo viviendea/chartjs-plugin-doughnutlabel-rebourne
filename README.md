@@ -46,7 +46,7 @@ Below is a table with available options:
 
 | Option | Description | Label Scope (plugin.labels) | Plugin Scope (options.plugin) | Global Scope (Chart.defaults) |
 | --- | --- | :---: | :---: | :---: |
-| `paddingPercentage` | add padding when scaling text larger than inner circle | | &check; | &check; |
+| `paddingPercentage` | add padding when scaling text larger than inner circle (defaults to 10) | | &check; | &check; |
 | `labels` | array of labels (objects) | | &check; | |
 | `color`| css property | &check; | &check; | &check; |
 | `font.family` | css property | &check; | &check; | &check; |
@@ -56,8 +56,13 @@ Below is a table with available options:
 | `font.weight` | css property | &check; | &check; | &check; |
 | `font.string` | all previous font properties in one string separated by space | &check; | &check; | &check; |
 | `text` | value of label (can be string or function) | &check; | | |
+| `api`* | [plugin core api](https://www.chartjs.org/docs/latest/developers/plugins.html#plugin-core-api) (defaults to `beforeDatasetDraw`) | | &check; | &check; |
+
+*Option `api` is a really-low level and intended for developers and those who are familar with internal workings of Chart.js (or have experience making plugins).
 
 Note that more specific scope will override more global. For example, if you declare `color` in plugin scope and in label scope, value from label scope will win.
+
+Options with global scope have a special meaning - they will always have a default value, i.e. if other scopes have no value, the final option will taken from `Chart.defaults` scope.
 
 ```js
 options: {

@@ -45,6 +45,7 @@ var myChart1 = new Chart(ctx, {
         text: 'Multiple lines of text',
       },
       doughnutlabel: {
+        api: 'beforeDatasetDraw',
         labels: [
           {
             text: 'The title',
