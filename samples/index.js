@@ -68,6 +68,8 @@ var myChart1 = new Chart(ctx, {
             color: 'red',
           },
           {
+            // hide this label
+            display: false,
             text: '95%',
             font: {
               size: '45',

@@ -25,8 +25,23 @@ export default {
       var ctx = chart.ctx;
       var resolve = helpers.resolve;
 
+      var displayThis = (label) => {
+        return resolve(
+          [
+            label.display,
+            options.display,
+            Chart.defaults.plugins[this.id].display,
+          ],
+          ctx,
+          0
+        );
+      };
+
       var innerLabels = [];
-      options.labels.forEach(function(label) {
+      options.labels.forEach((label) => {
+        if (!displayThis(label)) {
+          return;
+        }
         var text =
           typeof label.text === 'function' ? label.text(chart) : label.text;
         var innerLabel = {

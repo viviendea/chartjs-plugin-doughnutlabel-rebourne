@@ -56,6 +56,7 @@ Below is a table with available options:
 | `font.weight` | css property | &check; | &check; | &check; |
 | `font.string` | all previous font properties in one string separated by space | &check; | &check; | &check; |
 | `text` | value of label (can be string or function) | &check; | | |
+| `display` | show label or not | &check; | &check; | &check; |
 | `api`* | [plugin core api](https://www.chartjs.org/docs/latest/developers/plugins.html#plugin-core-api) (defaults to `beforeDatasetDraw`) | | &check; | &check; |
 
 *Option `api` is a really-low level and intended for developers and those who are familar with internal workings of Chart.js (or have experience making plugins).

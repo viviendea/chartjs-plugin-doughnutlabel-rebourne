@@ -15,6 +15,7 @@ export default {
    * @prop {Number} font.weight - defaults to 'normal'
    * @default Chart.defaults.font.*
    * @prop {Number} paddingPercentage - how much padding to add when scaling very large text (value in percentage of 100)
+   * @prop {Bool} display - show label or not
    * @prop {String} api - specify which plugin core api to use to draw labels
    */
   font: {
@@ -25,5 +26,6 @@ export default {
     weight: null,
   },
   paddingPercentage: 10,
+  display: true,
   api: 'beforeDatasetDraw',
 };
