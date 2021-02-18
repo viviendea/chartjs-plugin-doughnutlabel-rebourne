@@ -12,7 +12,8 @@
   "jsdelivr": "dist/chartjs-plugin-doughnutlabel-rebourne.min.js",
   "unpkg": "dist/chartjs-plugin-doughnutlabel-rebourne.min.js",
   "files": [
-    "dist/**/*"
+    "dist/chartjs-plugin-doughnutlabel-rebourne.js",
+    "dist/chartjs-plugin-doughnutlabel-rebourne.min.js"
   ],
   "scripts": {
     "build": "gulp build",
