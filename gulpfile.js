@@ -15,6 +15,7 @@ var source = require('vinyl-source-stream');
 var pkg = require('./package.json');
 var gulpIf = require('gulp-if');
 const browserSync = require('browser-sync');
+const clean = require('gulp-clean');
 
 var argv = require('yargs')
   .option('output', {alias: 'o', default: 'dist'})
@@ -43,6 +44,14 @@ function isFixed(file) {
 }
 
 gulp.task(
+  'clean',
+  gulp.series(function() {
+    const out = argv.output;
+    return gulp.src(out, {read: false}).pipe(clean());
+  })
+);
+
+gulp.task(
   'lint',
   gulp.series(function() {
     var files = ['samples/**/*.js', 'src/**/*.js', 'test/**/*.js', '*.js'];
@@ -63,7 +72,7 @@ gulp.task(
 
 gulp.task(
   'build',
-  gulp.series(function(done) {
+  gulp.series('clean', function(done) {
     var out = argv.output;
     var task = function() {
       return rollup('rollup.config.js')

@@ -865,6 +865,7 @@ __metadata:
     chartjs: ^0.3.24
     eslint-config-chartjs: ^0.3.0
     gulp: ^4.0.2
+    gulp-clean: ^0.4.0
     gulp-eslint: ^4.0.2
     gulp-if: ^3.0.0
     gulp-rename: ^1.4.0
@@ -2491,6 +2492,19 @@ fsevents@~2.3.1:
   version: 4.2.6
   resolution: "graceful-fs@npm:4.2.6"
   checksum: 84d39c7756892553da990a9db7e45f844b3309b37b5a00174cbb4748476f2250c54f24594d4d252f64f085c65c2fdac7c809419bf6d55f0e6e42eb07ac0f5bf2
+  languageName: node
+  linkType: hard
+
+"gulp-clean@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "gulp-clean@npm:0.4.0"
+  dependencies:
+    fancy-log: ^1.3.2
+    plugin-error: ^0.1.2
+    rimraf: ^2.6.2
+    through2: ^2.0.3
+    vinyl: ^2.1.0
+  checksum: 390db9ec522c0dad70326eea60a850035ef45da833667142690dce58db7d617633294fa8682ae0097491f06c00379f1e4916b78136ff3fb62dd7153d4752b07e
   languageName: node
   linkType: hard
 
@@ -4956,6 +4970,17 @@ fsevents@~2.3.1:
   version: 0.1.15
   resolution: "ret@npm:0.1.15"
   checksum: 749c2fcae7071f5ecea4f8a18e35a79a8e8a58e522a16d843ecb9dfe9e647a76d92ae85c22690b02f87d3ab78b6b1f73341efc2fabbf59ed54dcfd9b1bdff883
+  languageName: node
+  linkType: hard
+
+"rimraf@npm:^2.6.2":
+  version: 2.7.1
+  resolution: "rimraf@npm:2.7.1"
+  dependencies:
+    glob: ^7.1.3
+  bin:
+    rimraf: ./bin.js
+  checksum: 059efac2838ef917d4d1da1d80e724ad28c120cdf14ca6ed27ca72db2dc70be3e25421cba5947c6ec3d804c1d2bb9a247254653816ee0722bf943ffdd1ae19ef
   languageName: node
   linkType: hard
 
