@@ -1,8 +1,8 @@
 'use strict';
 
 import Chart from 'chart.js';
-
-var helpers = Chart.helpers;
+import {valueOrDefault, toLineHeight, isNullOrUndef} from 'chart.js/helpers';
+var helpers = {valueOrDefault, toLineHeight, isNullOrUndef};
 
 var utils = {
   parseFont: function (value) {
