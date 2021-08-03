@@ -1,10 +1,11 @@
 'use strict';
 
 import Chart from 'chart.js';
+import {resolve} from 'chart.js/helpers';
 import defaults from './defaults';
 import utils from './utils';
 
-var helpers = Chart.helpers;
+var helpers = {resolve};
 
 export default {
   id: 'doughnutlabel',
