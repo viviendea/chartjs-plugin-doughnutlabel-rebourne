@@ -1,6 +1,6 @@
 {
   "name": "chartjs-plugin-doughnutlabel-rebourne",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.2",
   "description": "Chart.js plugin for doughnut chart to display lines of text in the center",
   "repository": {
     "type": "git",
