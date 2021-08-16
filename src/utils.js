@@ -1,19 +1,18 @@
 'use strict';
 
 import Chart from 'chart.js';
-import {valueOrDefault, toLineHeight, isNullOrUndef} from 'chart.js/helpers';
-var helpers = {valueOrDefault, toLineHeight, isNullOrUndef};
+import { valueOrDefault, toLineHeight, isNullOrUndef } from 'chart.js/helpers';
 
 var utils = {
   parseFont: function (value) {
     var defaults = Chart.defaults;
-    var size = helpers.valueOrDefault(value.size, defaults.font.size);
+    var size = valueOrDefault(value.size, defaults.font.size);
     var font = {
-      family: helpers.valueOrDefault(value.family, defaults.font.family),
-      lineHeight: helpers.toLineHeight(value.lineHeight, size),
+      family: valueOrDefault(value.family, defaults.font.family),
+      lineHeight: toLineHeight(value.lineHeight, size),
       size: size,
-      style: helpers.valueOrDefault(value.style, defaults.font.style),
-      weight: helpers.valueOrDefault(value.weight, null),
+      style: valueOrDefault(value.style, defaults.font.style),
+      weight: valueOrDefault(value.weight, null),
       string: '',
     };
 
@@ -22,11 +21,7 @@ var utils = {
   },
 
   toFontString: function (font) {
-    if (
-      !font ||
-      helpers.isNullOrUndef(font.size) ||
-      helpers.isNullOrUndef(font.family)
-    ) {
+    if (!font || isNullOrUndef(font.size) || isNullOrUndef(font.family)) {
       return null;
     }
 
