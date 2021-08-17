@@ -5,7 +5,7 @@ import Chart from 'chart.js';
 var helpers = Chart.helpers;
 
 var utils = {
-  parseFont: function(value) {
+  parseFont: function (value) {
     var defaults = Chart.defaults;
     var size = helpers.valueOrDefault(value.size, defaults.font.size);
     var font = {
@@ -21,7 +21,7 @@ var utils = {
     return font;
   },
 
-  toFontString: function(font) {
+  toFontString: function (font) {
     if (
       !font ||
       helpers.isNullOrUndef(font.size) ||
@@ -39,7 +39,7 @@ var utils = {
     );
   },
 
-  textSize: function(ctx, labels) {
+  textSize: function (ctx, labels) {
     var items = [].concat(labels);
     var ilen = items.length;
     var prev = ctx.font;

@@ -3,11 +3,11 @@
 var DEFAULT_COLORS1 = ['#f08700', '#f49f0a', '#efca08', '#00a6a6', '#bbdef0'];
 var DEFAULT_COLORS2 = ['#7fb7be', '#357266', '#dacc3e', '#bc2c1a', '#7d1538'];
 
-var randomScalingFactor = function() {
+var randomScalingFactor = function () {
   return Math.round(Math.random() * 100);
 };
 
-var getTotal = function(myChart) {
+var getTotal = function (myChart) {
   var sum = myChart.config.data.datasets[0].data.reduce((a, b) => a + b, 0);
   return `Total: ${sum}`;
 };
@@ -187,7 +187,7 @@ var myChart3 = new Chart(ctx, {
   },
 });
 
-document.getElementById('randomizeData').addEventListener('click', function() {
+document.getElementById('randomizeData').addEventListener('click', function () {
   myChart3.config.data.datasets[0].data = [
     randomScalingFactor(),
     randomScalingFactor(),

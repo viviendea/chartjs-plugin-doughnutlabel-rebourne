@@ -10,7 +10,7 @@ Chart.defaults.plugins.doughnutlabel = defaults;
 
 export default {
   id: 'doughnutlabel',
-  beforeInit: function(chart, args, options) {
+  beforeInit: function (chart, args, options) {
     var resolve = helpers.resolve;
     var ctx = chart.ctx;
     var api = resolve(
@@ -20,7 +20,7 @@ export default {
     );
     this[api] = this._drawLabels;
   },
-  _drawLabels: function(chart, args, options) {
+  _drawLabels: function (chart, args, options) {
     if (options && options.labels && options.labels.length > 0) {
       var ctx = chart.ctx;
       var resolve = helpers.resolve;
@@ -82,7 +82,7 @@ export default {
 
       // Adjust the font if necessary and recalculate the text area after applying the fit ratio
       if (fitRatio < 1) {
-        innerLabels.forEach(function(innerLabel) {
+        innerLabels.forEach(function (innerLabel) {
           innerLabel.font.size = Math.floor(innerLabel.font.size * fitRatio);
           innerLabel.font.lineHeight = undefined;
           innerLabel.font = utils.parseFont(

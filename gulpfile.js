@@ -18,10 +18,10 @@ const browserSync = require('browser-sync');
 const clean = require('gulp-clean');
 
 var argv = require('yargs')
-  .option('output', {alias: 'o', default: 'dist'})
-  .option('samples-dir', {default: 'samples'})
-  .option('docs-dir', {default: 'docs'})
-  .option('www-dir', {default: 'www'}).argv;
+  .option('output', { alias: 'o', default: 'dist' })
+  .option('samples-dir', { default: 'samples' })
+  .option('docs-dir', { default: 'docs' })
+  .option('www-dir', { default: 'www' }).argv;
 
 function watch(glob, task, done) {
   gutil.log('Waiting for changes...');
@@ -33,7 +33,7 @@ function watch(glob, task, done) {
   return gulp
     .watch(glob, task)
     .on('end', done)
-    .on('change', function(file) {
+    .on('change', function (file) {
       gutil.log('Changes detected for', path.relative('.', file));
     })
     .on('change', browserSync.reload);
@@ -45,20 +45,20 @@ function isFixed(file) {
 
 gulp.task(
   'clean',
-  gulp.series(function() {
+  gulp.series(function () {
     const out = argv.output;
-    return gulp.src(out, {read: false}).pipe(clean());
+    return gulp.src(out, { read: false }).pipe(clean());
   })
 );
 
 gulp.task(
   'lint',
-  gulp.series(function() {
+  gulp.series(function () {
     var files = ['samples/**/*.js', 'src/**/*.js', 'test/**/*.js', '*.js'];
 
     return gulp
       .src(files)
-      .pipe(eslint({fix: true}))
+      .pipe(eslint({ fix: true }))
       .pipe(eslint.format())
       .pipe(
         gulpIf(
@@ -72,14 +72,14 @@ gulp.task(
 
 gulp.task(
   'build',
-  gulp.series('clean', function(done) {
+  gulp.series('clean', function (done) {
     var out = argv.output;
-    var task = function() {
+    var task = function () {
       return rollup('rollup.config.js')
         .pipe(source(pkg.name + '.js'))
         .pipe(gulp.dest(out))
         .pipe(rename(pkg.name + '.min.js'))
-        .pipe(streamify(uglify({output: {comments: 'some'}})))
+        .pipe(streamify(uglify({ output: { comments: 'some' } })))
         .pipe(gulp.dest(out));
     };
 
@@ -91,15 +91,15 @@ gulp.task(
 
 gulp.task(
   'samples',
-  gulp.series(function() {
+  gulp.series(function () {
     // since we moved the dist files one folder up (package root), we need to rewrite
     // samples src="../dist/ to src="../ and then copy them in the /samples directory.
     var out = path.join(argv.output, argv.samplesDir);
     return gulp
-      .src('samples/**/*', {base: 'samples'})
+      .src('samples/**/*', { base: 'samples' })
       .pipe(
         streamify(
-          replace(/src="((?:\.\.\/)+)dist\//g, 'src="$1', {skipBinary: true})
+          replace(/src="((?:\.\.\/)+)dist\//g, 'src="$1', { skipBinary: true })
         )
       )
       .pipe(gulp.dest(out));
@@ -108,11 +108,11 @@ gulp.task(
 
 gulp.task(
   'package',
-  gulp.series('build', 'samples', function() {
+  gulp.series('build', 'samples', function () {
     var out = argv.output;
     var streams = merge(
-      gulp.src(path.join(out, argv.samplesDir, '**/*'), {base: out}),
-      gulp.src([path.join(out, '*.js'), 'LICENSE.md'], {allowEmpty: true})
+      gulp.src(path.join(out, argv.samplesDir, '**/*'), { base: out }),
+      gulp.src([path.join(out, '*.js'), 'LICENSE.md'], { allowEmpty: true })
     );
 
     return streams.pipe(zip(pkg.name + '.zip')).pipe(gulp.dest(out));
