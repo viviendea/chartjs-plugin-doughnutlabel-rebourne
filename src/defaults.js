@@ -28,4 +28,5 @@ export default {
   paddingPercentage: 10,
   display: true,
   api: 'beforeDatasetDraw',
+  color: '#000000',
 };
