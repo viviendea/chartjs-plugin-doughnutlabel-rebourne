@@ -1,16 +1,12 @@
 'use strict';
 
-import Chart from 'chart.js';
-import {resolve} from 'chart.js/helpers';
+import { resolve } from 'chart.js/helpers';
 import defaults from './defaults';
 import utils from './utils';
-
-var helpers = {resolve};
 
 export default {
   id: 'doughnutlabel',
   beforeInit: function (chart, args, options) {
-    var resolve = helpers.resolve;
     var ctx = chart.ctx;
     var api = resolve([options.api, defaults.api], ctx, 0);
     this[api] = this._drawLabels;
@@ -18,7 +14,6 @@ export default {
   _drawLabels: function (chart, args, options) {
     if (options && options.labels && options.labels.length > 0) {
       var ctx = chart.ctx;
-      var resolve = helpers.resolve;
 
       var displayThis = (label) => {
         return resolve(
