@@ -6,18 +6,12 @@ import utils from './utils';
 
 var helpers = Chart.helpers;
 
-Chart.defaults.plugins.doughnutlabel = defaults;
-
 export default {
   id: 'doughnutlabel',
   beforeInit: function (chart, args, options) {
     var resolve = helpers.resolve;
     var ctx = chart.ctx;
-    var api = resolve(
-      [options.api, Chart.defaults.plugins[this.id].api],
-      ctx,
-      0
-    );
+    var api = resolve([options.api, defaults.api], ctx, 0);
     this[api] = this._drawLabels;
   },
   _drawLabels: function (chart, args, options) {
@@ -27,11 +21,7 @@ export default {
 
       var displayThis = (label) => {
         return resolve(
-          [
-            label.display,
-            options.display,
-            Chart.defaults.plugins[this.id].display,
-          ],
+          [label.display, options.display, defaults.display],
           ctx,
           0
         );
@@ -48,13 +38,9 @@ export default {
           text: text,
           // this custom function will eventually call Charts.default
           font: utils.parseFont(
-            resolve([label.font, options.font, {}], ctx, 0)
+            resolve([label.font, options.font, defaults.font], ctx, 0)
           ),
-          color: resolve(
-            [label.color, options.color, Chart.defaults.color],
-            ctx,
-            0
-          ),
+          color: resolve([label.color, options.color, defaults.color], ctx, 0),
         };
         innerLabels.push(innerLabel);
       });
@@ -62,10 +48,7 @@ export default {
       var textAreaSize = utils.textSize(ctx, innerLabels);
 
       var paddingPercentage = resolve(
-        [
-          options.paddingPercentage,
-          Chart.defaults.plugins[this.id].paddingPercentage,
-        ],
+        [options.paddingPercentage, defaults.paddingPercentage],
         ctx,
         0
       );
@@ -86,7 +69,7 @@ export default {
           innerLabel.font.size = Math.floor(innerLabel.font.size * fitRatio);
           innerLabel.font.lineHeight = undefined;
           innerLabel.font = utils.parseFont(
-            resolve([innerLabel.font, {}], ctx, 0)
+            resolve([innerLabel.font, defaults.font], ctx, 0)
           );
         });
 
