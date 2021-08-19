@@ -47,7 +47,7 @@ gulp.task(
   'clean',
   gulp.series(function () {
     const out = argv.output;
-    return gulp.src(out, { read: false }).pipe(clean());
+    return gulp.src(out, { read: false, allowEmpty: true }).pipe(clean());
   })
 );
 
