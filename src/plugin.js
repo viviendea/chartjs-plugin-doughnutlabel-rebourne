@@ -64,9 +64,7 @@ export default {
         innerLabels.forEach(function (innerLabel) {
           innerLabel.font.size = Math.floor(innerLabel.font.size * fitRatio);
           innerLabel.font.lineHeight = undefined;
-          innerLabel.font = utils.parseFont(
-            resolve([innerLabel.font, defaults.font], ctx, 0)
-          );
+          innerLabel.font = utils.parseFont(innerLabel.font);
         });
 
         textAreaSize = utils.textSize(ctx, innerLabels);
