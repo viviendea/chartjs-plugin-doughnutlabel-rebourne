@@ -119,6 +119,7 @@ var myChart2 = new Chart(ctx, {
         text: 'One line of text',
       },
       doughnutlabel: {
+        color: '#bc2c1a',
         labels: [
           {
             text: 'This is one line of text',
@@ -128,7 +129,6 @@ var myChart2 = new Chart(ctx, {
               style: 'italic',
               weight: 'bold',
             },
-            color: '#bc2c1a',
           },
         ],
       },
