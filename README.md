@@ -37,8 +37,8 @@ or for each chart separately:
 
 ```js
 new Chart(ctx, {
-  plugins: [DoughnutLabel]
-})
+  plugins: [DoughnutLabel],
+});
 ```
 
 ## Usage
@@ -117,10 +117,10 @@ yarn install
 
 The following commands are available via `package.json`:
 
-| Command | Purpose |
-| :--- | :--- |
-| `yarn lint` | perform code linting |
-| `yarn build ` | build dist files |
+| Command              | Purpose                                         |
+| :------------------- | :---------------------------------------------- |
+| `yarn lint`          | perform code linting                            |
+| `yarn build `        | build dist files                                |
 | `yarn build --watch` | build and watch for changes (inc. browser-sync) |
 | `yarn package`       | create an archive with dist files and samples   |
 
