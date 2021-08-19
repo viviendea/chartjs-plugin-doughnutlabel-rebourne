@@ -3,6 +3,7 @@
 Chart.js plugin module that allows to display multiple lines of text centered in the middle area of the doughnut charts. This plugin is forked from [https://github.com/ciprianciurea/chartjs-plugin-doughnutlabel](https://github.com/ciprianciurea/chartjs-plugin-doughnutlabel) to provide support for Chart.js v3 as well as some other improvements and bug fixes. This is a BREAKING change meaning this plugin will NOT work with Chart.js v3.
 
 ## Demo
+
 Have a look at the [Demo page](https://alexkuc.github.io/chartjs-plugin-doughnutlabel-rebourne/samples/index.html).
 
 ## Table of contents
@@ -44,34 +45,36 @@ new Chart(ctx, {
 
 Below is a table with available options:
 
-| Option | Description | Label Scope (plugin.labels) | Plugin Scope (options.plugin) | Global Scope (Chart.defaults) |
-| --- | --- | :---: | :---: | :---: |
-| `paddingPercentage` | add padding when scaling text larger than inner circle (defaults to 10) | | &check; | &check; |
-| `labels` | array of labels (objects) | | &check; | |
-| `color`| css property | &check; | &check; | &check; |
-| `font.family` | css property | &check; | &check; | &check; |
-| `font.lineHeight` | css property | &check; | &check; | &check; |
-| `font.size` | css property | &check; | &check; | &check; |
-| `font.style` | css property | &check; | &check; | &check; |
-| `font.weight` | css property | &check; | &check; | &check; |
-| `font.string` | all previous font properties in one string separated by space | &check; | &check; | &check; |
-| `text` | value of label (can be string or function) | &check; | | |
-| `display` | show label or not | &check; | &check; | &check; |
-| `api`* | [plugin core api](https://www.chartjs.org/docs/latest/developers/plugins.html#plugin-core-api) (defaults to `beforeDatasetDraw`) | | &check; | &check; |
+| Option              | Description                                                                                                                      | Label Scope | Plugin Scope | Global Scope |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------- | :---------: | :----------: | :----------: |
+| `paddingPercentage` | add padding when scaling text larger than inner circle (defaults to 10)                                                          |             |   &check;    |   &check;    |
+| `labels`            | array of labels (objects)                                                                                                        |             |   &check;    |              |
+| `color`             | css property                                                                                                                     |   &check;   |   &check;    |   &check;    |
+| `font.family`       | css property                                                                                                                     |   &check;   |   &check;    |   &check;    |
+| `font.lineHeight`   | css property                                                                                                                     |   &check;   |   &check;    |   &check;    |
+| `font.size`         | css property                                                                                                                     |   &check;   |   &check;    |   &check;    |
+| `font.style`        | css property                                                                                                                     |   &check;   |   &check;    |   &check;    |
+| `font.weight`       | css property                                                                                                                     |   &check;   |   &check;    |   &check;    |
+| `font.string`       | all previous font properties in one string separated by space                                                                    |   &check;   |   &check;    |   &check;    |
+| `text`              | value of label (can be string or function)                                                                                       |   &check;   |              |              |
+| `display`           | show label or not                                                                                                                |   &check;   |   &check;    |   &check;    |
+| `api`\*             | [plugin core api](https://www.chartjs.org/docs/latest/developers/plugins.html#plugin-core-api) (defaults to `beforeDatasetDraw`) |             |   &check;    |   &check;    |
 
-*Option `api` is a really-low level and intended for developers and those who are familar with internal workings of Chart.js (or have experience making plugins).
+\*Option `api` is a really-low level and intended for developers and those who are familar with internal workings of Chart.js (or have experience making plugins).
 
 Note that more specific scope will override more global. For example, if you declare `color` in plugin scope and in label scope, value from label scope will win.
 
 Options with global scope have a special meaning - they will always have a default value, i.e. if other scopes have no value, the final option will taken from `Chart.defaults` scope.
 
 ```js
+Chart.defaults.plugins.doughnutlabel = {}; // global scope
+
 options: {
   plugins: {
-    doughnutlabel: {
+    doughnutlabel: { // plugin scope
       paddingPercentage: 5,
       labels: [
-        {
+        { // label scope
           text: 'Text' or functionName,
           font: {
             size: '24',
@@ -119,7 +122,7 @@ The following commands are available via `package.json`:
 | `yarn lint` | perform code linting |
 | `yarn build ` | build dist files |
 | `yarn build --watch` | build and watch for changes (inc. browser-sync) |
-| `yarn package` | create an archive with dist files and samples |
+| `yarn package`       | create an archive with dist files and samples   |
 
 ## License
 
