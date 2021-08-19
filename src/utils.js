@@ -25,6 +25,12 @@ var utils = {
       return null;
     }
 
+    const strOnly = new RegExp('^[0-9]+$');
+
+    if (!strOnly.test(font.size) && typeof font.size !== 'number') {
+      throw 'Invalid font size value! Only pixels allowed!';
+    }
+
     return (
       (font.style ? font.style + ' ' : '') +
       (font.weight ? font.weight + ' ' : '') +
