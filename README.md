@@ -45,20 +45,20 @@ new Chart(ctx, {
 
 Below is a table with available options:
 
-| Option              | Description                                                                                                                      | Label Scope | Plugin Scope | Global Scope |
-| ------------------- | -------------------------------------------------------------------------------------------------------------------------------- | :---------: | :----------: | :----------: |
-| `paddingPercentage` | add padding when scaling text larger than inner circle (defaults to 10)                                                          |             |   &check;    |   &check;    |
-| `labels`            | array of labels (objects)                                                                                                        |             |   &check;    |              |
-| `color`             | css property                                                                                                                     |   &check;   |   &check;    |   &check;    |
-| `font.family`       | css property                                                                                                                     |   &check;   |   &check;    |   &check;    |
-| `font.lineHeight`   | css property                                                                                                                     |   &check;   |   &check;    |   &check;    |
-| `font.size`         | css property                                                                                                                     |   &check;   |   &check;    |   &check;    |
-| `font.style`        | css property                                                                                                                     |   &check;   |   &check;    |   &check;    |
-| `font.weight`       | css property                                                                                                                     |   &check;   |   &check;    |   &check;    |
-| `font.string`       | all previous font properties in one string separated by space                                                                    |   &check;   |   &check;    |   &check;    |
-| `text`              | value of label (can be string or function)                                                                                       |   &check;   |              |              |
-| `display`           | show label or not                                                                                                                |   &check;   |   &check;    |   &check;    |
-| `api`\*             | [plugin core api](https://www.chartjs.org/docs/latest/developers/plugins.html#plugin-core-api) (defaults to `beforeDatasetDraw`) |             |   &check;    |   &check;    |
+| Option              | Default Value       | Description                                                                                    | Label Scope | Plugin Scope | Global Scope |
+| ------------------- | ------------------- | ---------------------------------------------------------------------------------------------- | :---------: | :----------: | :----------: |
+| `paddingPercentage` | 10                  | add padding when scaling text larger than inner circle (defaults to 10)                        |             |   &check;    |   &check;    |
+| `labels`            |                     | array of labels (objects)                                                                      |             |   &check;    |              |
+| `color`             | `#000000`           | css property                                                                                   |   &check;   |   &check;    |   &check;    |
+| `font.family`       | `undefined`         | css property                                                                                   |   &check;   |   &check;    |   &check;    |
+| `font.lineHeight`   | 1.2                 | css property                                                                                   |   &check;   |   &check;    |   &check;    |
+| `font.size`         | `undefined`         | css property                                                                                   |   &check;   |   &check;    |   &check;    |
+| `font.style`        | `undefined`         | css property                                                                                   |   &check;   |   &check;    |   &check;    |
+| `font.weight`       | `null`              | css property                                                                                   |   &check;   |   &check;    |   &check;    |
+| `font.string`       |                     | all previous font properties in one string separated by space                                  |   &check;   |   &check;    |   &check;    |
+| `text`              |                     | value of label (can be string or function)                                                     |   &check;   |              |              |
+| `display`           | `true`              | show label or not                                                                              |   &check;   |   &check;    |   &check;    |
+| `api`\*             | `beforeDatasetDraw` | [plugin core api](https://www.chartjs.org/docs/latest/developers/plugins.html#plugin-core-api) |             |   &check;    |   &check;    |
 
 \*Option `api` is a really-low level and intended for developers and those who are familar with internal workings of Chart.js (or have experience making plugins).
 
