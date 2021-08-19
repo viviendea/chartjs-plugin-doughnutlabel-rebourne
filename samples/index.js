@@ -12,6 +12,13 @@ var getTotal = function (myChart) {
   return `Total: ${sum}`;
 };
 
+Chart.defaults.plugins.doughnutlabel = {
+  color: 'red',
+  font: {
+    size: 32,
+  },
+};
+
 // Doughnut with multiple lines of text in the center
 var ctx = document.getElementById('chart1').getContext('2d');
 /* eslint-disable-next-line no-unused-vars */
@@ -49,9 +56,6 @@ var myChart1 = new Chart(ctx, {
         labels: [
           {
             text: 'The title',
-            font: {
-              size: '60',
-            },
           },
           {
             text: 'The subtitle',
