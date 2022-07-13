@@ -18,13 +18,13 @@ Have a look at the [Demo page](https://alexkuc.github.io/chartjs-plugin-doughnut
 Install through yarn:
 
 ```bash
-yarn install chartjs-plugin-doughnutlabel-rebourne
+yarn add chartjs-plugin-doughnutlabel-rebourne
 ```
 
 Don't forget to install v3 of Chart.js:
 
 ```bash
-yarn install chart.js@next
+yarn add chart.js
 ```
 
 After that, you need to activate the plugin, either globally :
@@ -88,6 +88,13 @@ options: {
     },
   },
 },
+```
+
+## TypeScript support
+
+TypeScript types are available for the plugin via [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/chartjs-plugin-doughnutlabel-rebourne). To install them, run:
+```bash
+yarn add @types/chartjs-plugin-doughnutlabel-rebourne -D
 ```
 
 ## Usage without a module bundler
