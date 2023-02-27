@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.26.14",
-    "chartjs": "^0.3.24",
+    "chartjs": "^4.0.1",
     "eslint-config-chartjs": "^0.3.0",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
@@ -44,6 +44,6 @@
     "yargs": "^16.2.0"
   },
   "peerDependencies": {
-    "chart.js": "^3.0.0-beta"
+    "chart.js": "^4.0.1"
   }
 }
